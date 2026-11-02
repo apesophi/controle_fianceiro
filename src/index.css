@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #F7F8FC;
+    --sidebar-bg: #171A2B;
+    --primary-purple: #7565E8;
+    --positive-green: #16A67A;
+    --negative-red: #E56B75;
+    --secondary-blue: #5794D8;
+    --text-primary: #24263A;
+    --text-secondary: #9296A8;
+    --border-color: #ECEEF4;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9DCE7;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B6BACB;
+}
+
+/* Smooth card subtle shadow */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 14px rgba(36, 38, 58, 0.03);
+}
+
+.card-shadow-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 4px 20px rgba(117, 101, 232, 0.07), 0 1px 4px rgba(0, 0, 0, 0.03);
+  transform: translateY(-1px);
+}
+
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}

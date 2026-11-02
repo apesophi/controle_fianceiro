@@ -1,0 +1,241 @@
+import { Transaction, Category, Bill, NotificationItem } from '../types/finance';
+
+export const INITIAL_CATEGORIES: Category[] = [
+  { id: 'cat-1', name: 'Alimentação & Mercado', type: 'expense', color: '#7565E8', icon: 'Utensils', budgetLimit: 1800 },
+  { id: 'cat-2', name: 'Moradia & Contas', type: 'expense', color: '#5794D8', icon: 'Home', budgetLimit: 3200 },
+  { id: 'cat-3', name: 'Transporte & Combustível', type: 'expense', color: '#E56B75', icon: 'Car', budgetLimit: 900 },
+  { id: 'cat-4', name: 'Lazer & Entretenimento', type: 'expense', color: '#F59E0B', icon: 'Film', budgetLimit: 850 },
+  { id: 'cat-5', name: 'Saúde & Bem-estar', type: 'expense', color: '#16A67A', icon: 'HeartPulse', budgetLimit: 600 },
+  { id: 'cat-6', name: 'Educação & Cursos', type: 'expense', color: '#8B5CF6', icon: 'GraduationCap', budgetLimit: 500 },
+  { id: 'cat-7', name: 'Compras & Vestuário', type: 'expense', color: '#EC4899', icon: 'ShoppingBag', budgetLimit: 750 },
+  { id: 'cat-8', name: 'Salário & Remuneração', type: 'income', color: '#16A67A', icon: 'Briefcase', budgetLimit: 0 },
+  { id: 'cat-9', name: 'Investimentos & Dividendos', type: 'income', color: '#5794D8', icon: 'TrendingUp', budgetLimit: 0 },
+  { id: 'cat-10', name: 'Projetos Freelance', type: 'income', color: '#7565E8', icon: 'Code', budgetLimit: 0 },
+];
+
+export const INITIAL_TRANSACTIONS: Transaction[] = [
+  {
+    id: 'tx-01',
+    description: 'Salário TechCorp Global',
+    amount: 12500.00,
+    type: 'income',
+    category: 'Salário & Remuneração',
+    date: '2026-11-01',
+    time: '08:30',
+    paymentMethod: 'Conta Corrente Itaú',
+    status: 'completed',
+    notes: 'Depósito regular de proventos',
+  },
+  {
+    id: 'tx-02',
+    description: 'Rendimento CDB & FIIs',
+    amount: 1450.50,
+    type: 'income',
+    category: 'Investimentos & Dividendos',
+    date: '2026-10-31',
+    time: '11:15',
+    paymentMethod: 'XP Investimentos',
+    status: 'completed',
+  },
+  {
+    id: 'tx-03',
+    description: 'Supermercado Pão de Açúcar',
+    amount: 485.90,
+    type: 'expense',
+    category: 'Alimentação & Mercado',
+    date: '2026-11-01',
+    time: '14:22',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  },
+  {
+    id: 'tx-04',
+    description: 'Aluguel do Apartamento',
+    amount: 2350.00,
+    type: 'expense',
+    category: 'Moradia & Contas',
+    date: '2026-10-30',
+    time: '09:00',
+    paymentMethod: 'Pix Banco Inter',
+    status: 'completed',
+    notes: 'Comprovante arquivado',
+  },
+  {
+    id: 'tx-05',
+    description: 'Abastecimento Posto Shell',
+    amount: 215.00,
+    type: 'expense',
+    category: 'Transporte & Combustível',
+    date: '2026-10-29',
+    time: '18:45',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  },
+  {
+    id: 'tx-06',
+    description: 'Consultoria UX/UI Design',
+    amount: 1850.00,
+    type: 'income',
+    category: 'Projetos Freelance',
+    date: '2026-10-28',
+    time: '16:00',
+    paymentMethod: 'Pix Banco Inter',
+    status: 'completed',
+  },
+  {
+    id: 'tx-07',
+    description: 'Jantar Restaurante Maremonti',
+    amount: 320.00,
+    type: 'expense',
+    category: 'Lazer & Entretenimento',
+    date: '2026-10-27',
+    time: '21:10',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  },
+  {
+    id: 'tx-08',
+    description: 'Farmácia & Vitaminas Drogasil',
+    amount: 142.80,
+    type: 'expense',
+    category: 'Saúde & Bem-estar',
+    date: '2026-10-26',
+    time: '12:05',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  },
+  {
+    id: 'tx-09',
+    description: 'Assinatura Spotify & Netflix',
+    amount: 79.90,
+    type: 'expense',
+    category: 'Lazer & Entretenimento',
+    date: '2026-10-25',
+    time: '06:00',
+    paymentMethod: 'Cartão Virtual Itaú',
+    status: 'completed',
+  },
+  {
+    id: 'tx-10',
+    description: 'Uber Viagens Corporativas',
+    amount: 68.40,
+    type: 'expense',
+    category: 'Transporte & Combustível',
+    date: '2026-10-24',
+    time: '19:30',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  },
+  {
+    id: 'tx-11',
+    description: 'Conta de Energia Elétrica Enel',
+    amount: 198.50,
+    type: 'expense',
+    category: 'Moradia & Contas',
+    date: '2026-10-22',
+    time: '10:00',
+    paymentMethod: 'Débito Automático',
+    status: 'completed',
+  },
+  {
+    id: 'tx-12',
+    description: 'Curso Especialização Next.js',
+    amount: 297.00,
+    type: 'expense',
+    category: 'Educação & Cursos',
+    date: '2026-10-20',
+    time: '15:40',
+    paymentMethod: 'Cartão Nubank Ultravioleta',
+    status: 'completed',
+  }
+];
+
+export const INITIAL_BILLS: Bill[] = [
+  {
+    id: 'bill-1',
+    title: 'Aluguel & Condomínio Ed. Horizonte',
+    amount: 2350.00,
+    dueDate: '2026-11-05',
+    category: 'Moradia & Contas',
+    status: 'pending',
+    autoDebit: true,
+    institution: 'QuintoAndar'
+  },
+  {
+    id: 'bill-2',
+    title: 'Energia Elétrica Enel São Paulo',
+    amount: 218.40,
+    dueDate: '2026-11-08',
+    category: 'Moradia & Contas',
+    status: 'pending',
+    autoDebit: false,
+    institution: 'Enel SP'
+  },
+  {
+    id: 'bill-3',
+    title: 'Internet Fibra Óptica 600MB',
+    amount: 149.90,
+    dueDate: '2026-11-12',
+    category: 'Moradia & Contas',
+    status: 'pending',
+    autoDebit: true,
+    institution: 'Vivo Fibra'
+  },
+  {
+    id: 'bill-4',
+    title: 'Fatura Nubank Ultravioleta',
+    amount: 3420.50,
+    dueDate: '2026-11-15',
+    category: 'Compras & Vestuário',
+    status: 'pending',
+    autoDebit: false,
+    institution: 'Nubank'
+  },
+  {
+    id: 'bill-5',
+    title: 'Plano de Saúde SulAmérica Especial',
+    amount: 580.00,
+    dueDate: '2026-11-20',
+    category: 'Saúde & Bem-estar',
+    status: 'pending',
+    autoDebit: true,
+    institution: 'SulAmérica'
+  }
+];
+
+export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
+  {
+    id: 'notif-1',
+    title: 'Vencimento de Fatura',
+    message: 'O Aluguel & Condomínio vence em 4 dias (05/11).',
+    date: 'Hoje, 09:15',
+    read: false,
+    type: 'alert'
+  },
+  {
+    id: 'notif-2',
+    title: 'Meta de Economia',
+    message: 'Parabéns! Você já poupou 53% da sua renda planejada neste ciclo.',
+    date: 'Hoje, 08:00',
+    read: false,
+    type: 'success'
+  },
+  {
+    id: 'notif-3',
+    title: 'Dividendo Creditado',
+    message: 'R$ 1.450,50 recebidos de proventos na sua carteira de investimentos.',
+    date: 'Ontem, 16:40',
+    read: true,
+    type: 'info'
+  }
+];
+
+export const MONTHLY_CHART_DATA = [
+  { month: 'Mai', income: 11200, expense: 6100, savings: 5100 },
+  { month: 'Jun', income: 12400, expense: 6800, savings: 5600 },
+  { month: 'Jul', income: 13100, expense: 7400, savings: 5700 },
+  { month: 'Ago', income: 12900, expense: 6950, savings: 5950 },
+  { month: 'Set', income: 14200, expense: 7300, savings: 6900 },
+  { month: 'Out', income: 15800, expense: 7180, savings: 8620 },
+  { month: 'Nov', income: 15800, expense: 6900, savings: 8900, projected: true },
+];

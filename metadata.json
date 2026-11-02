@@ -1,0 +1,6 @@
+{
+  "name": "FinanceFlow - Gestão Financeira Premium",
+  "description": "Plataforma premium e inteligente de controle financeiro, gestão de receitas, despesas, orçamentos e fluxo de caixa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
